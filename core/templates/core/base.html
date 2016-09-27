@@ -29,7 +29,7 @@
 <body>
     <header>
         <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
+          <div class="container menu">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-header-collapse" aria-expanded="false">
                     <span class="sr-only">Toggle navigations</span>
@@ -38,13 +38,15 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="{% url 'core:index' %}" class="navbar-brand">
+                    <img class="navbar-left" src="static/logo.gif" alt="Plonker">
                     Plonker
                 </a>
             </div>
             
           </div>
         </nav>
-    </header>
+    </header>        
+
     <div class="container">
         <div class="{% block content_classes %}main-content{% endblock content_classes %}">
 
@@ -57,10 +59,11 @@
             
             {% endif %}
     
-        
-            {% block content %}
+            <div class="body-content">
+                {% block content %}
 
-            {% endblock %}
+                {% endblock %}                
+            </div>
         
         </div>
     </div><!-- end container -->

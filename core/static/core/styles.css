@@ -1,8 +1,36 @@
 body {
     font-family: 'Lato';
+    color: #333;
     padding-top: 70px;
+    background-color: #f5f8fa
+
+}
+
+.menu {
+    color: #767676;
+}
+.menu img {
+    margin-top: -14px;
+    height: 48px;
+    border: 1px solid #767676;
+}
+
+footer {
+    color: #767676;
+}
+
+.body-content {
+    min-height: 500px;
 }
 
 h1, h2, h3, h4{
     font-family: 'Exo+2';
 }
+
+hr {
+    border-color: #b30000;
+}
+
+
+
+
