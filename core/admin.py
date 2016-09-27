@@ -14,6 +14,7 @@ class UserAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     list_display = [
+        'user',
         'text',
         'date_added',
     ]
