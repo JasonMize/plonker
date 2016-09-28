@@ -1,0 +1,21 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <h2>Sign Up</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% for field in form %}
+            {% include 'core/_form_input.html' %}
+        {% endfor %}
+
+        <button type="submit" class="btn btn-primary">Sign Up</button>
+
+    </form>
+
+{% endblock content %}
+
+
+

@@ -56,8 +56,16 @@
                         <li>    
                             <a href="{% url 'accounts:login' %}">Log In</a>
                         </li>
+                        <li>
+                            <a href="{% url 'accounts:register' %}">Sign Up</a>
+                        </li>
                     {% endif %}
                 </ul>      
+
+                <p class="navbar-text navbar-right">
+                    Hello, {{ request.user.username }}.
+                </p>
+
             </div>   
 
           </div>
