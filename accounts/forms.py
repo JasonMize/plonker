@@ -17,4 +17,3 @@ class LoginForm (BootstrapFormMixin, AuthenticationForm):
 
 
 
-
