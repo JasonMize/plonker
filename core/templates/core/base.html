@@ -62,10 +62,11 @@
                     {% endif %}
                 </ul>      
 
-                <p class="navbar-text navbar-right">
-                    Hello, {{ request.user.username }}.
-                </p>
-
+                {% if request.user.is_authenticated %}
+                    <p class="navbar-text navbar-right">
+                        Hello, {{ request.user.username }}.
+                    </p>                
+                {% endif %}
             </div>   
 
           </div>

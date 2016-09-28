@@ -1,10 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
+
+from .models import Post
 
 def user_posts (request):
 
-    context = {
+    posts = Post.objects.filter(user = request.user)
 
+
+    # how to get posts from a specific user - feed id into the params
+    # post = Post.objects.filter(user__id=request.user.pk)
+
+
+    context = {
+        'posts':posts,
     }
 
     # return HttpResponse("Here we be, you and I.")

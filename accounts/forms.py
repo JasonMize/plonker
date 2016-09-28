@@ -9,7 +9,6 @@ class LoginForm (BootstrapFormMixin, AuthenticationForm):
     pass
 
 
-
 class RegistrationForm (BootstrapFormMixin, forms.ModelForm):
 
     password = forms.CharField(label="Password", widget=forms.PasswordInput)
@@ -17,7 +16,7 @@ class RegistrationForm (BootstrapFormMixin, forms.ModelForm):
 
     class Meta:
         model = User
-        fields = ('username', 'password', 'password2', 'first_name', 'last_name')
+        fields = ('username', 'email', 'password', 'password2')
 
     def clean_password2(self):
         cd = self.cleaned_data
