@@ -3,25 +3,17 @@ from django.contrib import admin
 from .models import Post
 
 
-# class UserAdmin(admin.ModelAdmin):
-#     list_display = [
-#         'name', 
-#     ]
-
-
-
-
 
 class PostAdmin(admin.ModelAdmin):
     list_display = [
-        # 'user',
-        'text',
+        'user',
         'date_added',
+        'text',
     ]
 
 
 
 
-
-# admin.site.register(User, UserAdmin)
 admin.site.register(Post, PostAdmin)
+
+

@@ -18,12 +18,12 @@ from django.contrib.auth.models import User
 
 
 class Post (models.Model):
+    user = models.ForeignKey(User, null=True, blank=True)
     text = models.TextField()
     date_added = models.DateTimeField(
         help_text="Posted on:",
         default = timezone.now, null=True, blank=True
     )
-    # user = models.ForeignKey("User", null=True, blank=True)
 
     class Meta:
         ordering = ['date_added']
