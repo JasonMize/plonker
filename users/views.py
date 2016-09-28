@@ -7,10 +7,6 @@ def user_posts (request):
 
     posts = Post.objects.filter(user = request.user)
 
-    # how to get posts from a specific user - feed id into the params
-    # post = Post.objects.filter(user__id=request.user.pk)
-
-
     context = {
         'posts':posts,
     }
