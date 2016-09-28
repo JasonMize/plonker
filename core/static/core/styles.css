@@ -22,6 +22,7 @@ footer {
 
 .body-content {
     min-height: 500px;
+    text-align: center;
 }
 
 h1, h2, h3, h4{
@@ -32,6 +33,24 @@ hr {
     border-color: #b30000;
 }
 
-
+.post {
+    width: 500px;
+    margin: auto;
+    text-align: left;
+    border: 2px solid #b30000;
+    background-color: #ccc;
+    padding: 20px;
+}
+.post_username {
+    font-weight: bolder;
+    font-size: 1.2em;
+}
+.post_date {
+    float: right;
+    /*right: 10px;*/
+}
+.post_text {
+    margin-top: 10px;
+}
 
 
