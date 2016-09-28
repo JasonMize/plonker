@@ -1,0 +1,23 @@
+ 
+
+
+   <h3>Posts</h3>
+    {% for post in posts %}
+        <div class="post">
+            <div>
+                <span class="post_username">
+                    {{ post.user }}
+                </span>
+                <span class="post_date">
+                    {{ post.date_added }}                    
+                </span>
+            </div>
+            <div class="post_text">
+                {{ post.text }}                
+            </div>
+        </div>
+        
+        <hr>
+    {% endfor %}
+
+

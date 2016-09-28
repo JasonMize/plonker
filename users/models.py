@@ -13,7 +13,7 @@ class Post (models.Model):
     )
 
     class Meta:
-        ordering = ['date_added']
+        ordering = ['-date_added']
 
     def __str__(self):
         return "{} - Posted on: {}".format(self.text, self.date_added)

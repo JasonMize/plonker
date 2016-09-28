@@ -2,9 +2,9 @@
 
 {% block content %}
 
-Well hello there, beautiful!
+    <h2>The Big Pond</h2>
 
-<a href="{% url 'users:user_posts' %}">User Posts</a>
+    {% include 'users/_post.html' %}    
     
 {% endblock content %}
 
