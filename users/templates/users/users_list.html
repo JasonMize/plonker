@@ -1,0 +1,28 @@
+{% extends "core/base.html" %}
+
+{% block content %}
+
+    <p>
+        Total Plonkers: {{users_count}}
+    </p>
+    <p>
+        Total Plonks: {{posts_count}}
+    </p>
+    
+    <h2>The Plonkers</h2>
+
+    {% for user in users %}
+        <div>
+            <a href="#">
+                {{user}} 
+            </a>
+        </div>
+    {% endfor %}
+
+
+
+{% endblock content %}
+
+
+
+

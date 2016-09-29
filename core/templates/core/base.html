@@ -38,17 +38,27 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="{% url 'core:index' %}" class="navbar-brand">
-                    <img class="navbar-left" src="{% static 'core/logo.gif' %}" alt="Plonker">
-                    Plonker
+                    <span>
+                        <img src="{% static 'core/logo.gif' %}" alt="Plonker">                        
+                    </span>
+                    <span class="menu-title">
+                        Plonker                        
+                    </span>
                 </a>
             </div>
 
-            <div id="header-navbar-collapse" class="collapse navbar-collapse">
+            <div id="navbar-header-collapse" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{% url 'users:user_posts' %}">My Posts</a>
+                        <a href="{% url 'users:users_list' %}">Other Plonkers</a>
                     </li>
                     {% if request.user.is_authenticated %}                
+                        <li>
+                            <a href="{% url 'users:user_posts' %}">My Plonks</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'users:create_post' %}">Create Plonk</a>
+                        </li>
                         <li>
                             <a href="{% url 'accounts:logout' %}">Log Out</a>
                         </li>
@@ -63,9 +73,9 @@
                 </ul>      
 
                 {% if request.user.is_authenticated %}
-                    <p class="navbar-text navbar-right">
+                    <ul class="navbar-text navbar-left">
                         Hello, {{ request.user.username }}.
-                    </p>                
+                    </ul>                
                 {% endif %}
             </div>   
 
