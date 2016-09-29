@@ -63,6 +63,26 @@ hr {
 }
 .post-text {
     margin-top: 10px;
+    overflow-wrap: break-word;
 }
+
+
+.create-post-form {
+    width: 500px;
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

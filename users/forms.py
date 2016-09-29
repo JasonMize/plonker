@@ -9,6 +9,13 @@ class CreatePostForm (BootstrapFormMixin, forms.ModelForm):
     class Meta:
         model = Post
         fields = ("text",)
+        widgets = {
+            'text' : forms.Textarea
+                (attrs=
+                    {'maxlength': '140',}
+                )
+        }
+            
 
 
 

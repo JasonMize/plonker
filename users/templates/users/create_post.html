@@ -8,13 +8,15 @@
     
         {% csrf_token %}
 
-        {% for field in form %}
-            {% include "core/_form_input.html" %}
-        {% endfor %}
-    
-        <button type="submit" class="btn btn-primary">
-            Save
-        </button>
+        <div class="create-post-form">
+            {% for field in form %}
+                {% include "core/_form_input.html" %}
+            {% endfor %}
+        
+            <button type="submit" class="btn btn-primary">
+                Plonk
+            </button>            
+        </div>
 
     </form>
 

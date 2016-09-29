@@ -30,8 +30,6 @@ def user_posts (request, id=None):
 
 
 
-
-
 def users_list(request):
     users_count = User.objects.count()
     posts_count = Post.objects.count()
@@ -43,10 +41,7 @@ def users_list(request):
         'posts_count' : posts_count, 
     }
 
-    return render (request, "users/users_list.html", context)
-
-
-
+    return render (request, 'users/users_list.html', context)
 
 
 
@@ -57,10 +52,10 @@ def create_post (request):
         form = CreatePostForm(request.POST)
         if form.is_valid():
             new_post = form.save(commit=False)
-            new_post.user_id = request.user.pk
+            new_post.user = request.user
             new_post.save()
             messages.success(request, "You Plonked!")
-            return redirect ('users:user_posts', request.user)
+            return redirect ('users:user_posts', request.user.pk)
     else:
         form = CreatePostForm()
 

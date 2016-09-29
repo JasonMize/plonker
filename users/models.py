@@ -6,7 +6,8 @@ from django.contrib.auth.models import User
 
 class Post (models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
-    text = models.TextField()
+    # text = models.TextField()
+    text = models.CharField (blank=True, max_length=140)
     date_added = models.DateTimeField(
         help_text="Posted on:",
         default = timezone.now, null=True, blank=True
