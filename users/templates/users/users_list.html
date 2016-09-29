@@ -12,11 +12,30 @@
     <h2>The Plonkers</h2>
 
     {% for user in users %}
-        <div>
-            <a href="#">
-                {{user}} 
-            </a>
+        <div class="post">
+
+            <a href="{% url 'users:user_posts' user.pk %}">            
+                {% load static %}
+                <img class="post-image" src="{% static 'core/default_user.gif' %}" alt="{{ user }}">                        
+            </a>    
+
+            <div>
+                <a href="{% url 'users:user_posts' user.pk %}">
+                    <span class="post-username">
+                        {{ user }}
+                    </span>
+                </a>
+                
+                <span class="post-date">
+                    <div>Joined:  </div>
+                    <div>{{ user.date_joined }}</div>                    
+                </span>
+            </div>
+
         </div>
+
+        <hr>
+
     {% endfor %}
 
 

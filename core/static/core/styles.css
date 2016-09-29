@@ -41,11 +41,12 @@ hr {
 
 .post {
     width: 500px;
-    margin: auto;
+    margin: 0px auto;
     text-align: left;
     border: 2px solid #b30000;
     background-color: #ccc;
     padding: 20px;
+    min-height: 95px;
 }
 .post-image {
     float: left;
