@@ -1,5 +1,7 @@
 {% extends "core/base.html" %}
 
+{% load users_filters %}
+
 {% block content %}
 
     <p>
@@ -15,16 +17,22 @@
         <div class="post">
 
             <a href="{% url 'users:user_posts' user.pk %}">            
-                {% load static %}
-                <img class="post-image" src="{% static 'core/default_user.gif' %}" alt="{{ user }}">                        
+
+                <img class="post-image" src="https://www.gravatar.com/avatar/{{user.email | hashify}}?d=wavatar&r=g" alt="{{user}}">     
+            
             </a>    
 
             <div>
-                <a href="{% url 'users:user_posts' user.pk %}">
-                    <span class="post-username">
-                        {{ user }}
-                    </span>
-                </a>
+                <span class="post-user-leftside">
+                    <div class="post-username">
+                        <a href="{% url 'users:user_posts' user.pk %}">
+                            {{ user }}
+                        </a>                        
+                    </div>
+                    <div>
+                        Plonked x times.
+                    </div>
+                </span>
                 
                 <span class="post-date">
                     <div>Joined:  </div>
@@ -33,6 +41,8 @@
             </div>
 
         </div>
+
+        <div>{{email}}</div>
 
         <hr>
 

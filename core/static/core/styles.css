@@ -6,6 +6,11 @@ body {
 
 }
 
+
+.navbar-default {
+    background-image: linear-gradient(to bottom,#fff 20%,#bbb 100%);
+}
+
 .menu {
     color: #767676;
 }
@@ -47,6 +52,7 @@ hr {
     background-color: #ccc;
     padding: 20px;
     min-height: 95px;
+    border-radius: 30px;
 }
 .post-image {
     float: left;
@@ -65,7 +71,10 @@ hr {
     margin-top: 10px;
     overflow-wrap: break-word;
 }
+.post-user-leftside {
+    position: absolute;
 
+}
 
 .create-post-form {
     width: 500px;

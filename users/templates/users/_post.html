@@ -1,13 +1,15 @@
-{% load static %}
+{% load users_filters %}
  
     <h2>{{ user_name }}</h2>
 
    <h3>Plonks</h3>
+  
     {% for post in posts %}
+  
         <div class="post">
 
-            <img class="post-image" src="{% static 'core/default_user.gif' %}" alt="">                        
-        
+            <img class="post-image" src="https://www.gravatar.com/avatar/{{post.user.email | hashify}}?d=wavatar&r=g" alt="{{post.user}}">                 
+            
             <div>
                 <span class="post-username">
                     {{ post.user }}
@@ -20,9 +22,11 @@
             <div class="post-text">
                 {{ post.text }}                
             </div>
+    
         </div>
         
         <hr>
+
     {% endfor %}
 
 

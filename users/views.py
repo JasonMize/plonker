@@ -15,10 +15,9 @@ def user_posts (request, id=None):
     if id:
         user_name = User.objects.get(id = id)
     else: 
-        user_name = request.user
-
+        user_name = request.user    
     posts = user_name.post_set.all()
-    
+
     context = {
         'user_name' : user_name, 
         'posts' : posts,
