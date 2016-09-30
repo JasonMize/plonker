@@ -1,12 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.http import HttpResponse
+# from django.http import HttpResponse
 from django.db.models import Count
 from django.contrib import messages
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 from .models import Post
 from .forms import CreatePostForm
-from django.contrib.auth.models import User
 
 
 
@@ -44,7 +45,7 @@ def users_list(request):
 
 
 
-
+@login_required
 def create_post (request):
 
     if request.method == "POST":
