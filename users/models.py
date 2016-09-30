@@ -4,6 +4,7 @@ from django.utils import timezone
 from django.contrib.auth.models import User
 
 
+
 class Post (models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
     # text = models.TextField()

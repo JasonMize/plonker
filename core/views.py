@@ -5,10 +5,8 @@ from users.models import Post
 def index(request):
 
     posts = Post.objects.all()
-    fred = "blue"
 
     context = {
-        'fred': fred,
         'posts':posts,
     }
 
