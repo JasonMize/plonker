@@ -9,6 +9,7 @@ class PostAdmin(admin.ModelAdmin):
         'user',
         'date_added',
         'text',
+        
     ]
 
 

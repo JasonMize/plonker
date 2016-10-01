@@ -14,6 +14,8 @@ class Post (models.Model):
         default = timezone.now, null=True, blank=True
     )
 
+
+
     class Meta:
         ordering = ['-date_added']
 
