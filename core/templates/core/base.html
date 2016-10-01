@@ -48,6 +48,13 @@
             </div>
 
             <div id="navbar-header-collapse" class="collapse navbar-collapse">
+
+                {% if request.user.is_authenticated %}
+                    <ul class="navbar-text navbar-left menu-username">
+                        Hello, {{ request.user.username }}.
+                    </ul>                
+                {% endif %}
+
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="{% url 'users:users_list' %}">Other Plonkers</a>
@@ -72,11 +79,6 @@
                     {% endif %}
                 </ul>      
 
-                {% if request.user.is_authenticated %}
-                    <ul class="navbar-text navbar-left">
-                        Hello, {{ request.user.username }}.
-                    </ul>                
-                {% endif %}
             </div>   
 
           </div>

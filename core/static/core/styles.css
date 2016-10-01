@@ -25,6 +25,9 @@ body {
     font-weight: bolder;
     font-size: 1.2em;
 }
+.menu-username {
+    padding-left: 0;
+}
 
 
 footer {
