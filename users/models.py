@@ -7,14 +7,12 @@ from django.contrib.auth.models import User
 
 class Post (models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
-    # text = models.TextField()
-    text = models.CharField (blank=True, max_length=140)
+    text = models.CharField (blank=True, max_length=139)
     date_added = models.DateTimeField(
         help_text="Posted on:",
-        default = timezone.now, null=True, blank=True
+        default = timezone.now, null=True, blank=True 
+
     )
-
-
 
     class Meta:
         ordering = ['-date_added']
@@ -27,7 +25,13 @@ class Post (models.Model):
 
 
 
+class Ripple (models.Model):
+    original_post = models.ForeignKey(Post, null = True, blank = True)
+    original_post_owner = models.ForeignKey(User, null=True, blank=True)
 
-
+    class Meta:
+        ordering = [
+        'original_post'
+    ]
 
 

@@ -12,11 +12,11 @@ class CreatePostForm (BootstrapFormMixin, forms.ModelForm):
         widgets = {
             'text' : forms.Textarea
                 (attrs=
-                    {'maxlength': '140',}
+                    {'maxlength': '139',}
                 )
         }
         labels = {
-            'text' :  'Text',
+            'text' :  'Text - maximum of 139 characters',
         }
             
 

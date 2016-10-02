@@ -57,6 +57,9 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <a href="{% url 'core:index' %}">The Big Pond</a>
+                    </li>
+                    <li>
                         <a href="{% url 'users:users_list' %}">Other Plonkers</a>
                     </li>
                     {% if request.user.is_authenticated %}                
