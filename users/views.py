@@ -1,13 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
-# from django.http import HttpResponse
+from django.http import HttpResponse
 from django.db.models import Count
 from django.contrib import messages
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-from .models import Post
-from .forms import CreatePostForm
+from .models import Post, Ripple
+from .forms import CreatePostForm, CreateRippleForm
 
 
 
@@ -26,6 +26,36 @@ def user_posts (request, id=None):
 
     # return HttpResponse("Here we be, you and I.")
     return render(request, "users/user_posts.html", context)
+
+
+
+
+@login_required
+def ripple(request, post_id):
+    original_post = Post.objects.get(id=post_id)
+  
+
+    if request.method == "POST":
+        form = CreateRippleForm(request.POST)
+        if form.is_valid():
+            new_post = form.save(commit=False)
+            new_post.user = request.user
+
+            new_post.original_post = 'original_post'
+
+            new_post.save()
+            messages.success(request, "You Plonked a Ripple!")
+            return redirect ('users:user_posts', request.user.pk)
+    else:
+        form = CreateRippleForm()
+
+    context = {
+        'form' : form, 
+        'original_post' : original_post,  
+    }
+
+    return render (request, 'users/ripple.html', context)
+
 
 
 
@@ -64,6 +94,8 @@ def create_post (request):
     }
 
     return render (request, 'users/create_post.html', context)
+
+
 
 
 

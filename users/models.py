@@ -9,9 +9,8 @@ class Post (models.Model):
     user = models.ForeignKey(User, null=True, blank=True)
     text = models.CharField (blank=True, max_length=139)
     date_added = models.DateTimeField(
-        help_text="Posted on:",
+        help_text="Posted on: ",
         default = timezone.now, null=True, blank=True 
-
     )
 
     class Meta:
@@ -26,12 +25,20 @@ class Post (models.Model):
 
 
 class Ripple (models.Model):
-    original_post = models.ForeignKey(Post, null = True, blank = True)
-    original_post_owner = models.ForeignKey(User, null=True, blank=True)
+    original_post = models.OneToOneField(Post, null = True, blank = True)
+    ripple_text = models.CharField(blank = True, max_length=139)
+    ripple_date = models.DateTimeField(
+        help_text="Posted on: ", 
+        default = timezone.now, null=True, blank = True
+    )
 
     class Meta:
-        ordering = [
-        'original_post'
-    ]
+        ordering = ['-ripple_date']
+
+    def __str__(self):
+        return "{} - Posted on: {}".format(self.ripple_text, self.ripple_date)
+
+    def get_absolute_url(self):
+        return reverse("core:index")
 
 

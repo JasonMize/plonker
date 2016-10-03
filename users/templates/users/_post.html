@@ -22,8 +22,20 @@
             <div class="post-text">
                 {{ post.text }}                
             </div>
+
+            <div class="post-reply">
+                <a href="{% url 'users:ripple' post.pk %}">
+                    Ripple
+                </a>
+            </div>
     
         </div>
+
+        {% if ripple_text %}
+        
+            Ripple = {{ ripple_text }}
+        
+        {% endif %}
         
         <hr>
 

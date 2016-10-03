@@ -78,6 +78,10 @@ hr {
     position: absolute;
 
 }
+.post-reply {
+    float: right;
+}
+
 
 .create-post-form {
     width: 500px;

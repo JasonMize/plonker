@@ -1,0 +1,15 @@
+   <form action="" method="POST">
+    
+        {% csrf_token %}
+
+        <div class="create-post-form">
+            {% for field in form %}
+                {% include "core/_form_input.html" %}
+            {% endfor %}
+        
+            <button type="submit" class="btn btn-primary">
+                Plonk
+            </button>            
+        </div>
+
+    </form>
