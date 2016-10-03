@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='post',
             name='date_added',
-            field=models.DateTimeField(blank=True, default=django.utils.timezone.localtime, null=True, help_text='Posted on:'),
+            field=models.DateTimeField(blank=True, null=True, help_text='Posted on:'),
         ),
     ]
