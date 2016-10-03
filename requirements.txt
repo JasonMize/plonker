@@ -5,3 +5,4 @@ gunicorn==19.6.0
 pytz==2016.6.1
 sqlparse==0.2.1
 whitenoise==3.2.2
+psycopg2==2.5.4
