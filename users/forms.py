@@ -28,14 +28,12 @@ class CreateRippleForm (BootstrapFormMixin, forms.ModelForm):
         model = Ripple
         fields = (
             'ripple_text', 
-            'original_post',
         )
         widgets = {
             'ripple_text' : forms.Textarea
                 (attrs=
                     {'maxlength': '139',}
                 ),
-            'original_post' : forms.HiddenInput(),   
         }
         labels = {
             'ripple_text' :  'Text - 139 character maximum',

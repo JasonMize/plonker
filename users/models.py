@@ -25,7 +25,7 @@ class Post (models.Model):
 
 
 class Ripple (models.Model):
-    original_post = models.OneToOneField(Post, null = True, blank = True)
+    original_post = models.ForeignKey(Post)
     ripple_text = models.CharField(blank = True, max_length=139)
     ripple_date = models.DateTimeField(
         help_text="Posted on: ", 

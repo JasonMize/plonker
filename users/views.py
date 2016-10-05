@@ -32,20 +32,23 @@ def user_posts (request, id=None):
 
 @login_required
 def ripple(request, post_id):
-    original_post = Post.objects.get(id=post_id)
-  
+    original_post = get_object_or_404(Post, pk=post_id)
 
     if request.method == "POST":
         form = CreateRippleForm(request.POST)
+        
         if form.is_valid():
             new_post = form.save(commit=False)
-            new_post.user = request.user
-
-            new_post.original_post = 'original_post'
-
+            # print (new_post)
+            # print (original_post)
+            new_post.original_post= original_post
+            # import pdb; pdb.set_trace()
             new_post.save()
-            messages.success(request, "You Plonked a Ripple!")
+
+            messages.success(request, "You Plonked A Ripple!")
+
             return redirect ('users:user_posts', request.user.pk)
+    
     else:
         form = CreateRippleForm()
 

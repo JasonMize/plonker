@@ -12,11 +12,12 @@ class PostAdmin(admin.ModelAdmin):
     ]
 
 class RippleAdmin (admin.ModelAdmin):
-    list_display = [
+    list_display = (
         'original_post',
         'ripple_text', 
         'ripple_date',
-    ]
+    )
+    list_filter = ('original_post',)
 
 
 
