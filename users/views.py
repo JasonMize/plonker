@@ -20,6 +20,7 @@ def user_posts (request, id=None):
     posts = user_name.post_set.all()
 
     context = {
+        # 'ripples' : ripples,
         'user_name' : user_name, 
         'posts' : posts,
     }
@@ -39,10 +40,7 @@ def ripple(request, post_id):
         
         if form.is_valid():
             new_post = form.save(commit=False)
-            # print (new_post)
-            # print (original_post)
             new_post.original_post= original_post
-            # import pdb; pdb.set_trace()
             new_post.save()
 
             messages.success(request, "You Plonked A Ripple!")

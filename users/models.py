@@ -41,4 +41,11 @@ class Ripple (models.Model):
     def get_absolute_url(self):
         return reverse("core:index")
 
+    def owner(self):
+        return self.original_post.user
+
+
+
+
+
 

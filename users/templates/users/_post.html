@@ -31,11 +31,13 @@
     
         </div>
 
-        {% if ripple_text %}
+        <div>
+            {% for ripple in post.ripple_set.all %}
+                {{ ripple.ripple_text }}    
+            {% endfor %}
+            
+        </div>
         
-            Ripple = {{ ripple_text }}
-        
-        {% endif %}
         
         <hr>
 
