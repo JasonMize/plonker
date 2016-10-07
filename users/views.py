@@ -20,7 +20,6 @@ def user_posts (request, id=None):
     posts = user_name.post_set.all()
 
     context = {
-        # 'ripples' : ripples,
         'user_name' : user_name, 
         'posts' : posts,
     }
@@ -34,9 +33,7 @@ def user_posts (request, id=None):
 @login_required
 def ripple(request, post_id):
     original_post = get_object_or_404(Post, pk=post_id)
-    # ripples = Ripple.objects.all()
-    # owner = ripples.filter(id=Ripple.owner)
-
+ 
     if request.method == "POST":
         form = CreateRippleForm(request.POST)
         
