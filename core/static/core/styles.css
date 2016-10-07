@@ -78,14 +78,45 @@ hr {
     position: absolute;
 
 }
-.post-reply {
-    float: right;
-}
-
 
 .create-post-form {
     width: 500px;
     margin: auto;
+}
+
+.ripples {
+    width: 500px;
+    margin: 0px auto;
+    text-align: left;
+    border: 2px solid #b30000;
+    background-color: #ccc;
+    padding: 20px;
+    min-height: 95px;
+    border-radius: 30px;
+}
+.ripple {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #b30000;
+}
+.ripple-image {
+    float: left;
+    border: 1px solid #b30000;
+    height: 40px;
+    margin-right: 10px;
+}
+.ripple-username {
+
+}
+.ripple-date {
+    float: right;
+}
+.ripple-text {
+    margin-top: 5px;
+    overflow-wrap: break-word;
+}
+.ripple-reply {
+    float: right;
 }
 
 

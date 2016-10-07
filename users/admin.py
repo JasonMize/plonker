@@ -14,6 +14,7 @@ class PostAdmin(admin.ModelAdmin):
 class RippleAdmin (admin.ModelAdmin):
     list_display = (
         'original_post',
+        'owner',
         'ripple_text', 
         'ripple_date',
     )

@@ -45,7 +45,7 @@ def ripple(request, post_id):
 
             messages.success(request, "You Plonked A Ripple!")
 
-            return redirect ('users:user_posts', request.user.pk)
+            return redirect ('core:index')
     
     else:
         form = CreateRippleForm()

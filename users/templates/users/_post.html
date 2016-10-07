@@ -23,21 +23,41 @@
                 {{ post.text }}                
             </div>
 
-            <div class="post-reply">
-                <a href="{% url 'users:ripple' post.pk %}">
-                    Ripple
-                </a>
-            </div>
-    
-        </div>
+            <hr>
 
-        <div>
-            {% for ripple in post.ripple_set.all %}
-                {{ ripple.ripple_text }}    
-            {% endfor %}
-            
-        </div>
+            <div class="ripples">
+                {% for ripple in post.ripple_set.all %}
+                    <div 
+                        {% if post.ripple_set.count > 1 %}
+                            class="ripple"
+                            {% else%}
+                                class=""
+                        {% endif %}
+                    >     
+                       <img class="ripple-image" src="https://www.gravatar.com/avatar/{{ripple.owner.email | hashify}}?d=wavatar&r=g" alt="{{ripple.owner}}">                  
+                        <div>
+                            <span class="ripple-username">
+                                {{ ripple.owner }}
+                            </span>
+                            <span class="ripple-date">
+                                {{ ripple.ripple_date }}
+                            </span>
+                        </div>
+                        <div class="ripple-text">
+                            {{ ripple.ripple_text }}                                
+                        </div>
+                    </div>
+                {% endfor %}
+                
+                <div class="ripple-reply">
+                    <a href="{% url 'users:ripple' post.pk %}">
+                        Ripple
+                    </a>
+                </div>
+            </div><!-- end ripple -->
         
+
+        </div><!-- end post -->
         
         <hr>
 

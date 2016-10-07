@@ -26,6 +26,7 @@ class Post (models.Model):
 
 class Ripple (models.Model):
     original_post = models.ForeignKey(Post)
+    owner = models.ForeignKey(User, null=True, blank=True)
     ripple_text = models.CharField(blank = True, max_length=139)
     ripple_date = models.DateTimeField(
         help_text="Posted on: ", 
@@ -33,7 +34,7 @@ class Ripple (models.Model):
     )
 
     class Meta:
-        ordering = ['-ripple_date']
+        ordering = ['ripple_date']
 
     def __str__(self):
         return "{} - Posted on: {}".format(self.ripple_text, self.ripple_date)
@@ -41,8 +42,6 @@ class Ripple (models.Model):
     def get_absolute_url(self):
         return reverse("core:index")
 
-    def owner(self):
-        return self.original_post.user
 
 
 
