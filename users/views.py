@@ -34,6 +34,8 @@ def user_posts (request, id=None):
 @login_required
 def ripple(request, post_id):
     original_post = get_object_or_404(Post, pk=post_id)
+    # ripples = Ripple.objects.all()
+    # owner = ripples.filter(id=Ripple.owner)
 
     if request.method == "POST":
         form = CreateRippleForm(request.POST)
@@ -41,6 +43,7 @@ def ripple(request, post_id):
         if form.is_valid():
             new_post = form.save(commit=False)
             new_post.original_post= original_post
+            new_post.owner = request.user
             new_post.save()
 
             messages.success(request, "You Plonked A Ripple!")
