@@ -2,36 +2,49 @@ body {
     font-family: 'Lato';
     color: #333;
     padding-top: 70px;
-    background-color: #f5f8fa
-
+    background-color: #f5f8fa;
+    background-image:  url("background_gradient.png"), url("background_water.jpg");
+    background-repeat: repeat-x, repeat;
+    background-size: 150px, contain;
 }
 
 
 .navbar-default {
-    background-image: linear-gradient(to bottom,#fff 20%,#bbb 100%);
+    background-image: linear-gradient(to bottom,#fff 20%,#daedf7 100%);
+    border-bottom: 3px solid #2548af;
 }
-
 .menu {
-    color: #767676;
+    vertical-align: middle;
+}
+.menu-links a {
+    border: 1px solid red;
+    color: red;
 }
 .menu img {
-    margin-top: -14px;
+    margin-top: -13px;
     margin-right: 10px;
     height: 48px;
-    border: 1px solid #767676;
 }
 .menu-title {
-    vertical-align: top;
+    vertical-align: middle;
     font-weight: bolder;
-    font-size: 1.2em;
+    font-size: 2.2em;
+    color: #f1f8fb;
+    text-shadow: 3px 2px 0px black;
 }
 .menu-username {
     padding-left: 0;
 }
 
 
-footer {
+.page-footer {
     color: #767676;
+    text-align: center;
+    background-image: linear-gradient(to bottom,#daedf7 20%,#fff 100%);
+    height: 50px;
+}
+.footer-text {
+    padding-top: 20px;
 }
 
 .body-content {
@@ -43,23 +56,29 @@ h1, h2, h3, h4{
     font-family: 'Exo+2';
 }
 
+.page-title {
+    font-size: 3em;
+    color: #f1f8fb;
+    text-shadow: 1px 1px 2px black;
+}
+
 hr {
-    border-color: #b30000;
+    border-color: #2548af;
 }
 
 .post {
     width: 500px;
     margin: 0px auto;
     text-align: left;
-    border: 2px solid #b30000;
-    background-color: #ccc;
+    border: 2px solid #2548af;
+    background-color: #daedf7;
     padding: 20px;
     min-height: 95px;
     border-radius: 30px;
 }
 .post-image {
     float: left;
-    border: 1px solid #b30000;
+    border: 1px solid #2548af;
     height: 60px;
     margin-right: 10px;
 }
@@ -88,8 +107,8 @@ hr {
     width: 500px;
     margin: 0px auto;
     text-align: left;
-    border: 2px solid #b30000;
-    background-color: #ccc;
+    border: 2px solid #2548af;
+    background-color: #f1f8fb;
     padding: 20px;
     min-height: 95px;
     border-radius: 30px;
@@ -97,11 +116,11 @@ hr {
 .ripple {
     margin-bottom: 10px;
     padding-bottom: 5px;
-    border-bottom: 1px solid #b30000;
+    border-bottom: 1px solid #2548af;
 }
 .ripple-image {
     float: left;
-    border: 1px solid #b30000;
+    border: 1px solid #2548af;
     height: 40px;
     margin-right: 10px;
 }
@@ -117,6 +136,9 @@ hr {
 }
 .ripple-reply {
     float: right;
+}
+.ripple-reply a {
+    color: #2548AF;
 }
 
 

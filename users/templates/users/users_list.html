@@ -6,14 +6,14 @@
 
 {% block content %}
 
-    <p>
-        Total Plonkers: {{users_count}}
-    </p>
-    <p>
-        Total Plonks: {{posts_count}}
-    </p>
+    <h2 class='page-title'>The Plonkers</h2>
     
-    <h2>The Plonkers</h2>
+    <h4>
+        Total Plonkers: {{users_count}}
+    </h4>
+    <h4>
+        Total Plonks: {{posts_count}}
+    </h4>
 
     {% for user in users %}
         <div class="post">

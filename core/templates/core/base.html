@@ -39,7 +39,7 @@
                 </button>
                 <a href="{% url 'core:index' %}" class="navbar-brand">
                     <span>
-                        <img src="{% static 'core/logo.gif' %}" alt="Plonker">                        
+                        <img src="{% static 'core/logo_ripple.jpg' %}" alt="Plonker">                        
                     </span>
                     <span class="menu-title">
                         Plonker                        
@@ -50,7 +50,7 @@
             <div id="navbar-header-collapse" class="collapse navbar-collapse">
 
                 {% if request.user.is_authenticated %}
-                    <ul class="navbar-text navbar-left menu-username">
+                    <ul class="navbar-text navbar-left menu-username menu-links">
                         Hello, {{ request.user.username }}.
                     </ul>                
                 {% endif %}
@@ -108,11 +108,12 @@
         
         </div>
     </div><!-- end container -->
-    
-    <footer class="page-footer">
-        <hr>
+    <hr>
+    <footer class="page-footer nav navbar-fixed-bottom">
         <div class="container">
-            &copy; Jason Mize 2016
+            <div class="footer-text">
+                &copy; Jason Mize 2016
+            </div>
         </div>
     </footer>
 
